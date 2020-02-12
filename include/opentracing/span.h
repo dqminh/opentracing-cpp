@@ -26,6 +26,8 @@ class SpanContext {
   virtual void ForeachBaggageItem(
       std::function<bool(const std::string& key, const std::string& value)> f)
       const = 0;
+
+  virtual bool IsSampled() const noexcept { return false; }
 };
 
 struct LogRecord {
