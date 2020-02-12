@@ -178,7 +178,7 @@ static void ToJson(std::ostream& writer,
                    const std::chrono::duration<Rep, Period>& duration) {
   auto count =
       std::chrono::duration_cast<std::chrono::microseconds>(duration).count();
-  writer << count;
+  writer << std::dec << count;
 }
 
 static void ToJson(std::ostream& writer, const LogRecord& log_record) {
