@@ -51,6 +51,8 @@ class SpanContext {
   // functionality or an error occurs (this is the case for no-op traces, for
   // example).
   virtual std::string ToSpanID() const noexcept { return {}; }
+
+  virtual bool IsSampled() const noexcept { return false; }
 };
 
 struct LogRecord {
